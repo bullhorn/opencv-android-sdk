@@ -27,9 +27,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        script {
-            sh "gradle clean install"
-            sh "gradle build"
+        withCredentials([usernamePassword(credentialsId: 'c376347e-4245-49fc-be2c-b4aa0ddce81f', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+          echo "---------------Publishing to Artifactory---------------"
+          sh "gradle clean install -PartifactoryUsername=$USERNAME -PartifactoryPassword=$PASSWORD"
+          sh "gradle build -PartifactoryUsername=$USERNAME -PartifactoryPassword=$PASSWORD" 
         }
       }
     }
