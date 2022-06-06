@@ -4,7 +4,7 @@ JAVA_DESTINATION=$DIR/android/libraries/opencv/src/main
 
 downloadSdk() {
   # Only download if destination does not exist
-  curl -O https://jaist.dl.sourceforge.net/project/opencvlibrary/3.4.4/opencv-3.4.4-android-sdk.zip
+  curl -OL https://jaist.dl.sourceforge.net/project/opencvlibrary/3.4.4/opencv-3.4.4-android-sdk.zip
 
   unzip opencv-3.4.4-android-sdk.zip
 }
