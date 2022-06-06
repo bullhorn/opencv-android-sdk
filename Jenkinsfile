@@ -37,7 +37,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'c376347e-4245-49fc-be2c-b4aa0ddce81f', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
           echo "---------------Publishing to Artifactory---------------"
-          sh 'gradle artifactoryPublish -Partifactory_user=$USERNAME -Partifactory_password=$PASSWORD'
+          sh 'gradle artifactoryPublish -PartifactoryUsername=$USERNAME -PartifactoryPassword=$PASSWORD'
         }
       }
     }
