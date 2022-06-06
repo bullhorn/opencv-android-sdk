@@ -27,7 +27,7 @@ pipeline {
   stages {
     stage('Install Android SDK') {
       steps {
-        sh "sudo apt install android-sdk android-sdk-platform-30"
+        sh "apt install android-sdk android-sdk-platform-30"
         sh "export ANDROID_HOME=/usr/lib/android-sdk"
       }
     }
