@@ -25,12 +25,6 @@ pipeline {
   }
 
   stages {
-    stage('Install Android SDK') {
-      steps {
-        sh "apt install android-sdk android-sdk-platform-30"
-        sh "export ANDROID_HOME=/usr/lib/android-sdk"
-      }
-    }
     stage('Build') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'c376347e-4245-49fc-be2c-b4aa0ddce81f', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
