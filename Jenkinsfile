@@ -2,7 +2,7 @@ library "EtsJenkinsLibrary@0.5.0"
 pipeline {
   agent {
     docker {
-      image 'bullhorn-hub.artifactory.bullhorn.com/ets-build-agents:jdk-8-debian'
+      image 'bullhorn-hub.artifactory.bullhorn.com/ets-build-agents:jdk-8-android-30-debian'
       args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
       label "bosjenkins-docker-agent"
       reuseNode true
