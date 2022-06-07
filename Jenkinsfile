@@ -22,6 +22,7 @@ pipeline {
     BUILD_SUCCESS_MESSAGE = "[${env.DISPLAY_NAME}] *SUCCESSFULLY* built ${env.JENKINS_BUILD} for ${env.GITHUB_URL}."
     PUBLISH_ERROR_MESSAGE = "[${env.DISPLAY_NAME}] *FAILED* to publish${env.JENKINS_BUILD} for ${env.GITHUB_URL}."
     PUBLISH_SUCCESS_MESSAGE = "[${env.DISPLAY_NAME}] *SUCCESSFULLY* published ${env.JENKINS_BUILD} for ${env.GITHUB_URL}."
+    JAVA_OPTS='-XX:MaxPermSize=1024m -XX:PermSize=128m -Xmx2048m -XX:-UseGCOverheadLimit'
   }
 
   stages {
