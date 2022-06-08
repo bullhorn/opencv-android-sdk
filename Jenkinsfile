@@ -26,6 +26,14 @@ pipeline {
   }
 
   stages {
+     stage('Setup') {
+      steps {
+        echo "---------------Setup Android w/ Emulator---------------"
+        sh "sdkmanager --list"
+        sh "avdmanager create avd -n first_avd --abi google_apis/x86_64 -k \"system-images;android-30;google_apis;x86_64\"" 
+        sh "emulator -avd first_avd -no-window -no-audio & adb devices"
+      }
+    }
     stage('Build') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'c376347e-4245-49fc-be2c-b4aa0ddce81f', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
